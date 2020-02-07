@@ -1,4 +1,5 @@
-##DAU, Rolling-28 MAU, Rolling-7 WAU
+
+-- DAU, Rolling-28 MAU, Rolling-7 WAU (code doesn't seem to be working properly, not sure why)
 WITH dau_table AS (
   SELECT reporting_date:: DATE as dt, count(distinct uuid_hash) AS dau
   FROM public.dish_activity
