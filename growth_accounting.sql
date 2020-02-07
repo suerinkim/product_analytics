@@ -1,4 +1,4 @@
-## retained
+-- retained
 WITH monthly_activity as (
     SELECT DISTINCT
         DATE_TRUNC('month', Reporting_Date) as month, uuid_hash
@@ -13,7 +13,7 @@ JOIN monthly_activity last_month
 GROUP BY this_month.month
 ORDER BY this_month.month
 
-## churned
+-- churned
 WITH monthly_activity as (
     SELECT DISTINCT 
         DATE_TRUNC('month', reporting_date) as month, uuid_hash
@@ -30,7 +30,7 @@ WHERE this_month.UUID_HASH is null
 GROUP BY 1
 ORDER BY 1
 
-##resurrected
+-- resurrected
 
 WITH monthly_activity AS (
     SELECT DISTINCT 
@@ -59,7 +59,7 @@ WHERE last_month.uuid_hash is null
 GROUP BY 1
 ORDER BY 1
 
-##new
+-- new
 WITH monthly_activity AS (
     SELECT DISTINCT 
         DATE_TRUNC('month', reporting_date) as month, uuid_hash
@@ -86,5 +86,3 @@ JOIN first_activity
 WHERE last_month.uuid_hash is null
 GROUP BY 1
 ORDER BY 1
-
-
