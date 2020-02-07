@@ -1,3 +1,4 @@
+
 -- retained
 WITH monthly_activity as (
     SELECT DISTINCT
@@ -31,7 +32,6 @@ GROUP BY 1
 ORDER BY 1
 
 -- resurrected
-
 WITH monthly_activity AS (
     SELECT DISTINCT 
         DATE_TRUNC('month', reporting_date) as month, uuid_hash
