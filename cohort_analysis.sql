@@ -1,3 +1,5 @@
+-- this number does not match new users in growth accounting
+
 WITH cohort_dfn_by_month_first_activity AS (
     SELECT uuid_hash, DATE_TRUNC('month', MIN(reporting_date)) AS cohort
     FROM public.dish_activity
