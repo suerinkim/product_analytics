@@ -5,7 +5,7 @@ FROM
 FROM
 (SELECT uuid_hash, 
     DATE_TRUNC('month', reporting_date) AS months_active,
-    COUNT(1) as active_status
+    1 as active_status
 FROM public.dish_activity
 WHERE reporting_date BETWEEN '2019-01-01' AND '2019-12-31'
 GROUP BY 1,2)
